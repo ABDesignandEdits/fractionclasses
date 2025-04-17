@@ -1,1 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fraction Coaching Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+        /* Custom styles for animations and enhanced UI - Refined Glassmorphism */
+        /* Glassmorphism Effect */
+.glassmorphism {
+    background-color: rgba(255, 255, 255, 0.08); /* Slightly more transparent for a soft look */
+    backdrop-filter: blur(12px); /* Retained strong blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Light border with a slight opacity */
+    border-radius: 16px; /* Smooth, rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for a soft floating effect */
+    padding: 2rem;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
 
+/* Enhanced hover effect */
+.glassmorphism:hover {
+    transform: scale(1.03); /* Subtle scale effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Slightly stronger shadow on hover */
+    border-color: rgba(255, 255, 255, 0.25);  /* Slightly brighter border on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly increased opacity on hover */
+}
+
+
+/* Gradient Background (for added vibrancy) */
+.gradient-bg {
+    background: linear-gradient(135deg, #222 0%, #000 100%); /* Smooth dark gradient */
+    background-size: cover;
+    color: white; /* Ensures text is visible */
+    padding: 20px;
+}
+
+
+/* Card Effect */
+.card {
+    background-color: rgba(255, 255, 255, 0.08); /* More subtle card background */
+    backdrop-filter: blur(12px); /* Maintains blurred effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle, thinner border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Light shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+    border-color: rgba(255, 255, 255, 0.2); /* Brighter border on hover */
+}
+
+        .card:hover {
+            transform: translateY(-4px) scale(1.01); /* Slight lift and scale on hover */
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #667eea, #764ba2); /* Gradient button */
+            color: white;
+            padding: 0.8rem 1.8rem; /* Slightly adjusted padding */
+            border-radius: 10px; /* More rounded button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger button shadow */
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex; /* Use inline-flex for better alignment */
+            align-items: center;
+            justify-content: center;
+            font-weight: 600; /* Make button text bold */
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #5e6edb, #633e91); /* Slightly shifted gradient on hover */
+            transform: translateY(-2px) scale(1.03); /* Slight lift and scale on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Increased shadow on hover */
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Slightly thicker border */
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly more opaque hover background */
+            border-color: rgba(255, 255, 255, 0.5); /* Brighter border on hover */
+            transform: scale(1.03);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Refined text shadow */
+        }
+
+        /* Specific to the header */
+       .header-glass {
+    background-color: rgba(0, 0, 0, 0.3); /* Dark transparent header */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+}
+
+.header-nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.header-nav-link:hover {
+    color: #ffdb58; /* Gold hover effect */
+    transform: scale(1.08);
+}
+
+.mobile-menu {
+    background-color: rgba(0, 0, 0, 0.4); /* Darker mobile menu */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-link {
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Darker hover background */
+    transform: translateX(8px); /* Smooth slide effect */
+    color: #ffdb58;
+}
+
+        /* Hero Section Styles */
+        #home {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 12rem 0; /* Increased padding for larger screens */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            overflow: hidden; /* To contain the animation */
+        }
+
+        #home h1 {
+            font-size: 3.4rem; /* Larger heading */
+            font-weight: 700;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease, pulse 2s infinite alternate; /* Added pulse */
+        }
+
+        #home p {
+            font-size: 1.6rem; /* Larger paragraph */
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.8); /* Lighter text */
+            animation: fadeInUp 1s ease, slightScale 2s infinite alternate;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+          from { transform: scale(1); }
+          to { transform: scale(1.06); } /* Stronger pulse */
+        }
+
+        @keyframes slightScale {
+            from { transform: scale(1); }
+            to { transform: scale(1.02); }
+        }
+
+
+        /* Courses Section Styles */
+        #courses {
+            padding: 8rem 0;
+            text-align: center;
+            background-color: #FFFACD;
+        }
+
+        #courses h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card {
+             background-color: rgba(255, 255, 255, 0.08); /* More transparent card background */
+            backdrop-filter: blur(12px); /* Slightly stronger blur */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Lighter, thinner border */
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly subtler shadow */
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .course-card:hover {
+            transform: translateY(-6px) scale(1.02); /* Stronger lift and scale on hover */
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+             border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 240px; /* Increased height of images */
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .course-card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-card-content h3 {
+            font-size: 1.85rem; /* Increased font size */
+            font-weight: 600;
+            margin-bottom: 1.2rem; /* Increased margin */
+            color: #2d3748;
+            text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .course-card-content p {
+            font-size: 1.15rem; /* Increased font size */
+            color: #4a5568;
+            margin-bottom: 1.8rem; /* Increased margin */
+        }
+
+        .course-card-content .age-group {
+            font-size: 1.25rem; /* Increased font size */
+            font-weight: 500;
+            color: #718096;
+            margin-bottom: 0;
+        }
+
+
+        /* Testimonials Section Styles */
+        #testimonials {
+            padding: 8rem 0;
+            text-align: center;
+            background-color: #edf2f7;
+        }
+
+        #testimonials h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.08); /* More transparent card background */
+            backdrop-filter: blur(12px); /* Slightly stronger blur */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Lighter, thinner border */
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly subtler shadow */
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .testimonial-card p {
+            font-size: 1.25rem; /* Increased font size */
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.7; /* Increased line height */
+        }
+
+        .testimonial-card .name {
+            font-size: 1.4rem; /* Increased font size */
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .testimonial-card .role {
+            font-size: 1.1rem;
+            color: #718096;
+        }
+
+
+        /* Video Section Styles */
+        #video {
+            padding: 8rem 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #f7fafc, #edf2f7);
+        }
+
+        #video h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 560px; /* Increased max-width */
+            height: 315px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background-color: #111;
+        }
+
+        .play-icon { 
+            width: 80px; /* Increased size */
+            height: 80px;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite alternate;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+        }
+
+        .play-icon:hover {
+            transform: scale(1.1);
+            color: rgba(255, 255, 255, 1);
+            filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+        }
+
+        .video-text {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .video-text h3 {
+            font-size: 1.85rem; /* Increased font size */
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .video-text p {
+            font-size: 1.15rem;
+            color: #4a5568;
+        }
+
+
+        /* Contact Section Styles */
+        #contact {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #f0f2ff, #e0e7ff);
+        }
+
+        #contact h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.08); /* More transparent form background */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem; /* Slightly increased padding */
+            transition: all 0.3s ease;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+
+        .contact-form h3 {
+            font-size: 2rem; /* Increased font size */
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .contact-form label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4a5568;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem; /* Increased padding */
+            border-radius: 8px; /* More rounded inputs */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter input border */
+            background-color: rgba(255, 255, 255, 0.05); /* Even more transparent input background */
+            color: #ffffff;
+            font-size: 1.1rem; /* Increased font size */
+            margin-bottom: 1.5rem; /* Increased margin */
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle inset shadow */
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5); /* Brighter focus border */
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly more opaque focus background */
+            transform: scale(1.01);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 120px; /* Increased height of textarea */
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.08); /* More transparent info background */
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem; /* Increased padding */
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem; /* Increased font size */
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info p {
+            font-size: 1.15rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem; /* Increased margin */
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-info svg {
+            width: 24px; /* Increased icon size */
+            height: 24px;
+            color: #667eea;
+            filter: drop-shadow(1px 1px 2px rgba(102, 126, 234, 0.5));
+        }
+
+
+        /* Footer Styles */
+        footer {
+            background-color: #2d3748;
+            color: #a0aec0;
+            padding: 2.5rem 0; /* Increased padding */
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem; /* Increased margin */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem; /* Increased gap */
+            margin-top: 0;
+        }
+
+        .social-icons a {
+            color: #a0aec0;
+            font-size: 1.5rem; /* Increased size */
+            transition: color 0.3s ease, transform 0.3s ease; /* Added transform */
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+            display: inline-flex; /* For better alignment */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+            transform: scale(1.2); /* Slight scale on hover */
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            #home h1 {
+                font-size: 3rem;
+            }
+            #home p {
+                font-size: 1.2rem;
+            }
+            .video-container {
+                max-width: 100%;
+                height: auto;
+            }
+            .video-container iframe {
+                height: 100%;
+            }
+            .contact-form {
+                padding: 2rem;
+            }
+            .contact-info {
+                padding: 2rem;
+                height: auto;
+            }
+            #courses h2{
+               font-size: 2.5rem;
+            }
+            #testimonials h2{
+                font-size: 2.5rem;
+            }
+            #video h2{
+                font-size: 2.5rem;
+            }
+            #contact h2{
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-nav {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            #home h1 {
+                font-size: 2.5rem;
+            }
+            #home p {
+                font-size: 1rem;
+            }
+            .btn-primary, .btn-outline {
+                padding: 0.75rem 1.6rem;
+            }
+            .course-card-content h3{
+                font-size: 1.6rem;
+            }
+            .course-card-content p{
+                font-size: 1rem;
+            }
+            .testimonial-card p{
+                font-size: 1.1rem;
+            }
+            .testimonial-card .name{
+                font-size: 1.2rem;
+            }
+            .contact-info h3{
+                font-size: 1.8rem;
+            }
+             .contact-form h3{
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+    <header class="header-glass py-4 fixed top-0 left-0 w-full z-50"> 
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="#">
+            <img src="https://yt3.googleusercontent.com/c0xcb9FyJH-6MysqLHLlIFNKZ0fj9OnBCzXJUm6nXxTL-re6bgeLQWaXgY0Dc-7vDkruFHMfaA=s160-c-k-c0x00ffffff-no-rj" 
+                 alt="Logo" 
+                 class="h-23 w-23 rounded-full" />
+        </a>
+
+
+            <nav class="header-nav hidden md:flex space-x-6">
+                <a href="#home" class="header-nav-link">Home</a>
+                <a href="#courses" class="header-nav-link">Courses</a>
+                <a href="#testimonials" class="header-nav-link">Testimonials</a>
+                <a href="#gallery" class="header-nav-link">Gallery</a>
+                <a href="#video" class="header-nav-link">Video</a>
+                <a href="#contact" class="header-nav-link">Contact</a>
+                <!-- Enroll Now Button -->
+<!-- Enroll Now Button -->
+<a href="#" class="btn-outline" id="enroll-btn" onclick="showForm(event)">Enroll Now</a>
+
+<!-- Hidden Form Section -->
+<div id="form-container" style="display: none; margin-top: 20px;">
+  <div class="form-wrapper">
+    
+    <!-- Back to Home Button -->
+    <div style="margin-bottom: 10px;">
+      <a href="/" class="btn-outline" onclick="goBack(event)">← Back to Home</a>
+    </div>
+
+    <div id="ff-compose"></div>
+    <script async defer src="https://formfacade.com/include/103468940786340535607/form/1FAIpQLSc5zh1MWaqsJ1VJ61RV8FIW0qulsOFCEMogXCoukD6pQwLhVw/classic.js?div=ff-compose"></script>
+
+    <!-- This overlay sits on top of the badge -->
+    <div class="form-badge-cover"></div>
+  </div>
+</div>
+
+<!-- JavaScript Functions -->
+<script>
+  function showForm(event) {
+    event.preventDefault();
+    document.getElementById('form-container').style.display = 'block';
+    document.getElementById('enroll-btn').style.display = 'none';
+  }
+
+  function goBack(event) {
+    event.preventDefault();
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('enroll-btn').style.display = 'inline-block';
+    // Optionally, redirect to homepage
+    // window.location.href = '/';
+  }
+</script>
+
+<!-- Styling -->
+<style>
+  .form-wrapper {
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #2f004d; /* Your dark violet bg */
+  }
+
+  
+  .btn-outline {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-outline:hover {
+    background-color: #fff;
+    color: #2f004d;
+  }
+</style>
+
+
+
+</nav>
+<!-- ✅ Fixed Mobile Menu Toggle -->
+<!-- Enroll Now Button outside header nav -->
+<div class="fixed top-4 right-4 z-50 md:hidden"> 
+  <a href="https://near.tl/sm/ph81xDQgy" target="_blank" rel="noopener noreferrer" class="btn-outline enroll-btn" id="enroll-btn-mobile">Enroll Now</a>
+  <div class="absolute -inset-1 rounded-xl bg-purple-500 opacity-75 blur-md z-[-1] wave-out"></div>
+</div>
+
+<style>
+  .wave-out {
+    animation: waveOut 1.5s ease-out infinite;
+  }
+
+  @keyframes waveOut {
+    0% {
+      transform: scale(1);
+      opacity: 0.75;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+</style>
+
+
+<div class="md:hidden pr-4 mt-14">
+  <div class="flex items-center gap-2 text-white">
+    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hidden cursor-pointer">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </div>
+  <!-- Mobile Menu -->
+<div id="mobile-menu-content" class="hidden absolute top-20 right-4 w-64 rounded-md shadow-lg z-50 bg-[#2f004d] p-4">
+  <nav class="flex flex-col gap-3">
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#courses" class="mobile-nav-link">Courses</a>
+    <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
+    <a href="#video" class="mobile-nav-link">Video</a>
+    <a href="#gallery" class="mobile-nav-link">Gallery</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+  </nav>
+</div>
+
+<script>
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const menu = document.getElementById("mobile-menu-content");
+
+  // Toggle menu open
+  menuIcon.addEventListener("click", () => {
+    menu.classList.remove("hidden");
+    menuIcon.classList.add("hidden");
+    closeIcon.classList.remove("hidden");
+  });
+
+  // Toggle menu close
+  closeIcon.addEventListener("click", () => {
+    menu.classList.add("hidden");
+    menuIcon.classList.remove("hidden");
+    closeIcon.classList.add("hidden");
+  });
+
+  // Close menu if click is outside menu or icons
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = menu.contains(e.target);
+    const isClickOnMenuIcon = menuIcon.contains(e.target);
+    const isClickOnCloseIcon = closeIcon.contains(e.target);
+
+    if (!isClickInsideMenu && !isClickOnMenuIcon && !isClickOnCloseIcon) {
+      menu.classList.add("hidden");
+      menuIcon.classList.remove("hidden");
+      closeIcon.classList.add("hidden");
+    }
+  });
+
+  // Form back button handler
+  function goBack(event) {
+    event.preventDefault();
+    document.getElementById('form-container').style.display = 'none';
+
+    document.querySelectorAll('.btn-outline, .mobile-nav-link').forEach(el => {
+      if (el.innerText.includes("Enroll Now")) {
+        el.style.display = 'inline-block';
+      }
+    });
+  }
+</script>
+
+<style>
+  html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+  .mobile-nav-link {
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  .mobile-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .btn-outline {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  .btn-outline:hover {
+    background-color: #fff;
+    color: #2f004d;
+  }
+</style>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+                                 Header Design ..
+   <main>
+  <section id="home" class="relative w-full h-[75vh] overflow-hidden">
+
+   <!-- 🔹 Background Video (autoplay, loop, muted, full width & height) -->
+<video
+  id="bg-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  class="absolute top-0 left-0 w-full h-full object-cover z-0"
+>
+  <source src="https://videos.pexels.com/video-files/7945680/7945680-hd_1920_1080_25fps.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+    <script>
+      const video = document.getElementById("bg-video");
+      if (video) {
+        video.muted = true;
+        video.volume = 0;
+        video.defaultMuted = true;
+        video.setAttribute("muted", "muted");
+        video.play().catch(err => console.log("Autoplay failed:", err));
+      }
+    </script>
+
+    <!-- 🔹 Black overlay with 48% opacity -->
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+    <!-- 🔹 Bottom Fade (to black) -->
+    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent z-20"></div>
+
+    <!-- 🔹 Content Over Video -->
+    <div class="relative z-30 flex flex-col justify-center items-center h-full text-white text-center px-4">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-shadow">Empowering Future Achievers</h1>
+      <p class="mb-6 max-w-xl text-shadow">
+        We provide personalized coaching for students in grades 6-12,
+        helping them excel academically and prepare for future success.
+      </p>
+      <a href="#courses" class="btn-primary bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition">
+        Explore Courses
+      </a>
+    </div>
+  </section>
+</main>
+
+
+        <section id="courses" class="bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center">Our Courses</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <div class="course-card">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipPHQZFrmz_0hbeKF6qITHbql6h3JVWj9eMslAEe=s387-k-no" alt="Middle School Program" />
+                        <div class="course-card-content">
+                            <h3>Middle School Program (6-8)</h3>
+                            <p>Building a strong foundation in core subjects with engaging teaching methodologies.</p>
+                            <p class="age-group">Age Group: 6-8</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipN0c_d3sJQKQtl7cgHeAUiywni24LdoXOy9QBv_=s680-w680-h510" alt="High School Prep" />
+                        <div class="course-card-content">
+                            <h3>High School Prep (9-10)</h3>
+                            <p>Preparing students for the challenges of higher education and standardized tests.</p>
+                            <p class="age-group">Age Group: 9-10</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipNsd-2XzVun45CM2rGzkA-KfVsu0nqrl-6s7-2c=s387-k-no" alt="College Admission" />
+                        <div class="course-card-content">
+                            <h3>College Admission (11-12)</h3>
+                            <p>Guiding students through the complex college application process with expert advice.</p>
+                            <p class="age-group">Age Group: 11-12</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://placehold.co/600x400/63B3ED/FFFFFF/png?text=Math+Mastery" alt="Math Mastery" />
+                        <div class="course-card-content">
+                            <h3>Math Mastery</h3>
+                            <p>Intensive program designed to enhance mathematical skills and problem-solving abilities.</p>
+                            <p class="age-group">Age Group: 6-12</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://placehold.co/600x400/3182CE/FFFFFF/png?text=Science+Excellence" alt="Science Excellence" />
+                        <div class="course-card-content">
+                            <h3>Science Excellence</h3>
+                            <p>Comprehensive science program covering physics, chemistry, and biology for all levels.</p>
+                            <p class="age-group">Age Group: 6-12</p>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="https://placehold.co/600x400/4299E1/FFFFFF/png?text=Language+Arts" alt="Language Arts Program" />
+                        <div class="course-card-content">
+                            <h3>Language Arts Program</h3>
+                            <p>Enhancing reading, writing, and communication skills for academic success.</p>
+                            <p class="age-group">Age Group: 6-12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="preferred-exams" class="bg-white py-16 px-6">
+  <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Preferred Exams</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+
+    <!-- Exam Card 1 -->
+    <div class="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-[#fef2f2]">
+      <!-- Logo Image Full Size -->
+      <img src="https://shikshapress.com/wp-content/uploads/2023/01/cbse-logo.jpg"
+           alt="CBSE"
+           class="absolute inset-0 w-full h-full object-contain p-6 transition-transform duration-500 group-hover:-translate-y-full z-10" />
+
+      <!-- Info Popup -->
+      <div class="absolute inset-0 px-4 py-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-white/90 backdrop-blur-md z-20">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">CBSE</h3>
+          <p class="text-sm text-gray-700 leading-snug">
+            The CBSE Board Exams are national-level assessments conducted annually for Classes 10 and 12, evaluating students' academic performance and determining eligibility for higher education opportunities in India.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exam Card 2 -->
+    <div class="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-[#e0f2fe]">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2jWlsFZC2n7cMvnAIedFzPig8wxqDDBFZuw&s"
+           alt="JEE"
+           class="absolute inset-0 w-full h-full object-contain p-6 transition-transform duration-500 group-hover:-translate-y-full z-10" />
+      <div class="absolute inset-0 px-4 py-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-white/90 backdrop-blur-md z-20">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">TBSE</h3>
+          <p class="text-sm text-gray-700 leading-snug">
+            TBSE exams are annual board examinations conducted for Class 10 (Madhyamik) and Class 12 (HS) students in Tripura, assessing their academic knowledge and eligibility for higher education.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exam Card 3 -->
+    <div class="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-[#fef9c3]">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCxvBgE8WQVIvQN7Qog5LwCXBVTwnPkdAtLA&s"
+           alt="NEET"
+           class="absolute inset-0 w-full h-full object-contain p-6 transition-transform duration-500 group-hover:-translate-y-full z-10" />
+      <div class="absolute inset-0 px-4 py-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-white/90 backdrop-blur-md z-20">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">JEE</h3>
+          <p class="text-sm text-gray-700 leading-snug"> JEE (Joint Entrance Examination) is a highly competitive national-level exam for aspirants seeking admission to undergraduate engineering programs (B.Tech/B.E.) at premier institutions like IITs, NITs, and other renowned colleges.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exam Card 4 -->
+    <div class="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-[#dcfce7]">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcfGaawTw_j2akluQ6CTEu6frdi0uuww0JjQ&s"
+           alt="Olympiads"
+           class="absolute inset-0 w-full h-full object-contain p-6 transition-transform duration-500 group-hover:-translate-y-full z-10" />
+      <div class="absolute inset-0 px-4 py-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-white/90 backdrop-blur-md z-20">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">NEET UG</h3>
+          <p class="text-sm text-gray-700 leading-snug">
+            NEET UG (National Eligibility cum Entrance Test for Undergraduate) is a national-level entrance exam in India for aspirants seeking admission to MBBS, BDS, and other medical courses in government and private institutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Gallery Part -->
+<head>
+  <meta charset="UTF-8">
+  <title>Meet our Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  <style>
+    .scrolling-wrapper {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .scrolling-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    @keyframes stackIn {
+      0% {
+        transform: translateY(30px) scale(0.95);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .stack-animate {
+      animation: stackIn 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    .gallery-card {
+      min-width: 260px;
+      max-width: 280px;
+    }
+
+    .gallery-card img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-card {
+        min-width: 80%;
+        margin-right: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Gallery Section with Vanta Background -->
+<section id="vanta-bg" class="py-12 px-6 relative">
+  <h2 id="gallery" class="text-3xl font-bold text-center mb-8">Meet our Gallery</h2>
+
+  <script>
+    VANTA.BIRDS({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xe6e6e6,
+      birdSize: 1.30,
+      wingSpan: 26.00,
+      speedLimit: 7.00
+    });
+  </script>
+
+  <!-- Arrows -->
+  <button id="leftArrow"
+    class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-transparent text-black hover:bg-white/30 transition duration-300 rounded-full w-10 h-10 flex items-center justify-center animate-pulse">
+    &lt;
+  </button>
+
+  <button id="rightArrow"
+    class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-transparent text-black hover:bg-white/30 transition duration-300 rounded-full w-10 h-10 flex items-center justify-center animate-pulse">
+    &gt;
+  </button>
+
+     <!-- Scrollable Gallery -->
+    <div id="galleryScroll" class="scrolling-wrapper space-x-4 mt-4">
+      <!-- Repeat this block for each image -->
+     <!-- Cards -->
+      <div class="min-w-[502px] max-w-[502px] h-[337px] flex-shrink-0 stack-animate" style="animation-delay: 0s;">
+        <div class="bg-white h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNYMA9v2UBdUZHGNn_o1CpJmr3awPtmeRT_Der3QsSe3AGJ-DwcgbmZhay57gsgp2bIja-R9qeGzvIb0pjYbw7fTRFOLoPE9SywPN98L6TZYPzCsx2g8p8ETenYOAqsKpvRK_LYzB0IhJyQzoNlJmc=w502-h283-s-no-gm?authuser=0" class="rounded-xl w-full h-full object-cover" alt="Gallery Image 1">
+        </div>
+      </div>
+
+      <div class="min-w-[502px] max-w-[502px] h-[337px] flex-shrink-0 stack-animate" style="animation-delay: 0.2s;">
+        <div class="bg-white h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczPhdfuHSp9D0lH1zGYRht-oWyA9LpdUOYorHsrWbx9E4JYUtiMUBzmn9ekZ8s4iZZAI8G8v1Ujj-NSNncZgIUfgbiK54OHKS1ewqOWOL15CP3wQEB7pnlD2k_zOkqoFx0VudwbN7SeknqFqFhkTf7k=w502-h334-s-no-gm?authuser=0" class="rounded-xl w-full h-full object-cover" alt="Gallery Image 2">
+        </div>
+      </div>
+
+      <div class="min-w-[502px] max-w-[502px] h-[337px] flex-shrink-0 stack-animate" style="animation-delay: 0.4s;">
+        <div class="bg-white h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczOjmlkwlJtmbDVQPuQnrxNxm2XA9gkoSEff58o9ZerToGX2CPflfiSUlsVq8ibaDKoi0qyrC1NlmDjvy0H8GX-xPZ3GjEVF21OPmm2xqVMlJaNAMLrGzd_kC8gZ-rxjtoO5cB-m6x1pV0phRon5y1I=w502-h334-s-no-gm?authuser=0" class="rounded-xl w-full h-full object-cover" alt="Gallery Image 3">
+        </div>
+      </div>
+
+      <div class="min-w-[502px] max-w-[502px] h-[337px] flex-shrink-0 stack-animate" style="animation-delay: 0.6s;">
+        <div class="bg-white h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczOMRERikqNq3h5KFFLBibSTfLqhQCQQgCSvNc4MM2BL0SZ2HwsVGf6k2GGqvQ2w1QeM231rUhKZDhNp50x4NEvc4YM1ryqqN5n4X-o8VFhqOslvQt86m-QBXwi4HU3AviTDtg-siL8TOK1WeqcykAM=w502-h334-s-no-gm?authuser=0" class="rounded-xl w-full h-full object-cover" alt="Gallery Image 4">
+        </div>
+      </div>
+
+      <div class="min-w-[502px] max-w-[502px] h-[337px] flex-shrink-0 stack-animate" style="animation-delay: 0.8s;">
+        <div class="bg-white h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczO1ZzCZGawwR9WDm8cZXqU9ygU7ty3mCTZxEgm2iEHWOYZOQKGfl6wMGjvKtKZeVQ02a6jI52EyMxnfyxhUbliZ3LyfJ6NfdmcaF_fHpF7YlTdgVPgAiz7eOiFxorBxs14B33jmeAfSjrLK1cwzk1pM=w502-h377-s-no-gm?authuser=0" class="rounded-xl w-full h-full object-cover" alt="Gallery Image 5">
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- JavaScript for auto-scroll and arrows -->
+  <script>
+    const scrollContainer = document.getElementById("galleryScroll");
+    const cardWidth = 304; // new card width + spacing
+    let scrollIndex = 0;
+
+    setInterval(() => {
+      scrollIndex++;
+      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      const nextScrollLeft = scrollIndex * cardWidth;
+
+      if (nextScrollLeft >= maxScroll) {
+        scrollIndex = 0;
+        scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollContainer.scrollTo({ left: nextScrollLeft, behavior: 'smooth' });
+      }
+    }, 4200);
+
+    // Trigger stack animation
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".stack-animate").forEach(el => {
+        el.style.animationPlayState = "running";
+      });
+    });
+
+    document.getElementById("leftArrow").addEventListener("click", () => {
+      scrollIndex = Math.max(0, scrollIndex - 1);
+      scrollContainer.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    });
+
+    document.getElementById("rightArrow").addEventListener("click", () => {
+      scrollIndex++;
+      scrollContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
+</body>
+
+                           <!-- Our Experts Section -->
+
+                           <head>
+                            <meta charset="UTF-8" />
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                            <title>Our Experts</title>
+                            <script src="https://cdn.tailwindcss.com"></script>
+                            <style>
+                              .scrollbar-hide::-webkit-scrollbar {
+                                display: none;
+                              }
+                              .scrollbar-hide {
+                                -ms-overflow-style: none;
+                                scrollbar-width: none;
+                              }
+                            </style>
+                          </head>
+                          <body class="bg-gray-50">
+                          
+                            <!-- Our Experts Section -->
+                            <section class="py-16">
+                              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#0E2F47] mb-12">
+                                  Our Educators
+                                </h2>
+                          
+                                
+                          
+                                  <!-- Card Container -->
+                                  <div id="cardContainer"
+                                    class="flex overflow-x-auto space-x-6 scroll-smooth snap-x scrollbar-hide pb-4">
+                          
+                                    <!-- Expert Card 1 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://lh3.googleusercontent.com/pw/AP1GczMUn4ETurrAiuRDjy51ROfYOTBZFynws5JNimLRcxdV24-0US5q50PyBoZYkAt57oNwPiDiUZYFrmauQiABUC5NKTtbxnV50G8XHO4GfHOHB3KiSFUmeeRz6RZZ5WPHqZHKsruJhKGJH7ilRV2TESRR=w558-h558-s-no-gm?authuser=0" 
+                                      alt="Nidhi Sharma" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          -- years exp</p>
+                                        <h2 class="text-lg font-semibold">Tapas Chandra Saha</h2>
+                                        <p class="text-sm">Biology Master Teacher</p>
+                                        <p class="font-bold mt-1">ABC</p>
+                                      </div>
+                                    </div>
+                          
+                                    <!-- Expert Card 2 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://lh3.googleusercontent.com/pw/AP1GczN-Cy7h-ZWhTJ6JMtC-l9VP6mmxl-OZ0qqBW9Z6f8HdYRErSHuiLd44LUGNsB9mdLPE2Bbtw68-5ZY5SxFRwijYMG5HJ5F2XnOt5PrR2eU6N-8UABdQeS76YnHDmLTVAcHvmRjFotkXKvQZerlFdNOR=w558-h558-s-no-gm?authuser=0" 
+                                      alt="Luv Mehan" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          -- years exp</p>
+                                        <h2 class="text-lg font-semibold">Bhupesh Chakraborty</h2>
+                                        <p class="text-sm">Social Science Master Teacher</p>
+                                        <p class="font-bold mt-1">ABC</p>
+                                      </div>
+                                    </div>
+                          
+                                    <!-- Expert Card 3 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://lh3.googleusercontent.com/pw/AP1GczMoaHHHvGmAz4DNLnfRxghLsVXk4bCucFSS7L9Hx8lus3aIa7cKXaHHIwTc8A-_kNOuzmLaX2lkOj_ZXEOZLpYtZqadskVIt3VSOePmU_1n4Llw0UV80XsozTLlxa_HNboHDvaiyMPbmoDUWXVTRtNZ=w558-h558-s-no-gm?authuser=0" 
+                                      alt="Rachita Sachdeva" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          8+ years exp</p>
+                                        <h2 class="text-lg font-semibold">Subham Datta</h2>
+                                        <p class="text-sm"> Experienced Biology Teacher</p>
+                                        <p class="font-bold mt-1">BSc, MSc, B.Ed., Tripura Univesity</p>
+                                      </div>
+                                    </div>
+                          
+                                    <!-- Expert Card 4 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://lh3.googleusercontent.com/pw/AP1GczNFEWWY9Ay5GYpy0s-Lfp-liDnwq49fNxbWosXhCZ-IKJBlzok9TYd5cU23Iy96DBnmy7Taag6zCDEl6I0NXpNgPK9se7a05vXrXCw9YhLGemC0KNa3xodc6uoSHdVMydm0XWleNmm1nyUJURPXZ6Vl=w558-h558-s-no-gm?authuser=0" 
+                                      alt="Surabhi Gaur" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          8+ years exp</p>
+                                        <h2 class="text-lg font-semibold">Supratim Majumder</h2>
+                                        <p class="text-sm">Chemistry Master & Gold Medalist</p>
+                                        <p class="font-bold mt-1">Tripura University</p>
+                                      </div>
+                                    </div>
+                          
+                                    <!-- Expert Card 5 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://images.vedantu.com/t/resize/2022-10/sachin-anand-vedantu-physics-master-teacher.jpg?width=300" alt="Sachin Anand" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          10+ years exp</p>
+                                        <h2 class="text-lg font-semibold">S</h2>
+                                        <p class="text-sm">Physics Master Teacher</p>
+                                        <p class="font-bold mt-1">IIT Roorkee</p>
+                                      </div>
+                                    </div>
+                          
+                                    <!-- Expert Card 6 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://images.vedantu.com/t/resize/2022-10/sharad-acharya-vedantu-maths-master-teacher.jpg?width=300" alt="Sharad Acharya" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          7+ years exp</p>
+                                        <h2 class="text-lg font-semibold">Sharad Acharya</h2>
+                                        <p class="text-sm">Maths Master Teacher</p>
+                                        <p class="font-bold mt-1">IIT Kanpur</p>
+                                      </div>
+                                    </div>
+                          
+                                    <!-- Expert Card 7 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://images.vedantu.com/t/resize/2022-10/anand-prakash-vedantu-physics-master-teacher.jpg?width=300" alt="Anand Prakash" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          12+ years exp</p>
+                                        <h2 class="text-lg font-semibold">Anand Prakash</h2>
+                                        <p class="text-sm">Physics Master Teacher</p>
+                                        <p class="font-bold mt-1">IIT Delhi</p>
+                                      </div>
+                                    </div>
+                          
+                                    <!-- Expert Card 8 -->
+                                    <div class="card flex-shrink-0 snap-start w-72 rounded-xl overflow-hidden shadow-md bg-white">
+                                      <img src="https://images.vedantu.com/t/resize/2022-10/abhishek-kumar-vedantu-physics-master-teacher.jpg?width=300" alt="Abhishek Kumar" class="w-full h-72 object-cover">
+                                      <div class="bg-[#0E2F47] text-white p-4 text-center">
+                                        <p class="text-xs mb-2 bg-[#E5E7EB] text-gray-800 px-3 py-1 rounded-full inline-block">
+                                          9+ years exp</p>
+                                        <h2 class="text-lg font-semibold">Abhishek Kumar</h2>
+                                        <p class="text-sm">Physics Master Teacher</p>
+                                        <p class="font-bold mt-1">IIT Bombay</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                          
+                                  
+                                </div>
+                              </div>
+                            </section>
+                          
+                            <!-- JavaScript -->
+                            <script>
+                              document.addEventListener("DOMContentLoaded", function () {
+                                const container = document.getElementById("cardContainer");
+                                const leftArrow = document.getElementById("leftArrow");
+                                const rightArrow = document.getElementById("rightArrow");
+                          
+                                // Manual scroll
+                                leftArrow.addEventListener("click", () => {
+                                  container.scrollBy({ left: -300, behavior: "smooth" });
+                                });
+                          
+                                rightArrow.addEventListener("click", () => {
+                                  container.scrollBy({ left: 300, behavior: "smooth" });
+                                });
+                          
+                                // Auto-scroll every 4 seconds
+                                setInterval(() => {
+                                  const maxScroll = container.scrollWidth - container.clientWidth;
+                                  if (container.scrollLeft >= maxScroll - 10) {
+                                    container.scrollTo({ left: 0, behavior: "smooth" });
+                                  } else {
+                                    container.scrollBy({ left: 300, behavior: "smooth" });
+                                  }
+                                }, 4000);
+                          
+                                // Touch swipe
+                                let startX = 0;
+                                let isDown = false;
+                          
+                                container.addEventListener("touchstart", (e) => {
+                                  isDown = true;
+                                  startX = e.touches[0].clientX;
+                                });
+                          
+                                container.addEventListener("touchmove", (e) => {
+                                  if (!isDown) return;
+                                  const currentX = e.touches[0].clientX;
+                                  const deltaX = startX - currentX;
+                                  container.scrollLeft += deltaX;
+                                  startX = currentX;
+                                });
+                          
+                                container.addEventListener("touchend", () => {
+                                  isDown = false;
+                                });
+                              });
+                            </script>
+                          </body>
+                          </html>
+<!-- Section 1 (Review) -->
+        <section id="testimonials" class="bg-gray-200">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center">What Our Students Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <div class="testimonial-card">
+                       <img alt="comma" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" class="mb-2.5 sm:mb-3.5 h-8 w-10 bg-center bg-no-repeat bg-contain " style="color:transparent" src="https://www.pw.live/_next/static/media/comma.fcbeaa74.webp">
+                        <p>"The teachers are incredibly supportive and knowledgeable.  I always felt encouraged to ask questions."</p>
+                        
+ <!-- View Card of Anirban  -->
+  <div class="flex gap-3 items-center mt-4">
+  <div class="border-2 p-1 border-[#D9DCE1] rounded-full">
+    <img
+      alt="icon"
+      loading="lazy"
+      width="0"
+      height="0"
+      decoding="async"
+      data-nimg="1"
+      class="h-9 w-9 bg-center rounded-full overflow-hidden bg-no-repeat bg-contain"
+      style="color:transparent"
+      src="https://yt3.googleusercontent.com/mCubsJd_UfMMlYJny2eYVj0vXdj56IDR8PFE6uhf1aejR9VIUYfsyYupIGKAXSP6wvlgjzW-=s120-c-k-c0x00ffffff-no-rj"
+    />
+  </div>
+  <div class="leading-none">
+    <div class="text-base text-[#1B2124] font-bold leading-none">Anirban Bhowmik</div>
+    <div class="flex items-center space-x-2 mt-0.5">
+      <div class="text-[#5A4BDA] text-xs font-semibold">Class 12, Science</div>
+      <div class="w-[2px] h-4 bg-[#5A4BDA]"></div> <!-- bold vertical line -->
+      <div class="text-[#5A4BDA] text-xs font-semibold">CBSE</div>
+    </div>
+  </div>
+</div>
+
+ <!-- Section 2 (Review) -->
+                    </div>
+                    <div class="testimonial-card">
+                        <img alt="comma" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" class="mb-2.5 sm:mb-3.5 h-8 w-10 bg-center bg-no-repeat bg-contain " style="color:transparent" src="https://www.pw.live/_next/static/media/comma.fcbeaa74.webp">
+                        <p>"The college admission guidance was invaluable.  They made a stressful process so much easier."</p>
+ <!-- View Card of ----  -->
+                        <div class="flex gap-3 items-center mt-4">
+  <div class="border-2 p-1 border-[#D9DCE1] rounded-full">
+    <img
+      alt="icon"
+      loading="lazy"
+      width="0"
+      height="0"
+      decoding="async"
+      data-nimg="1"
+      class="h-9 w-9 bg-center rounded-full overflow-hidden bg-no-repeat bg-contain"
+      style="color:transparent"
+      src="https://yt3.googleusercontent.com/mCubsJd_UfMMlYJny2eYVj0vXdj56IDR8PFE6uhf1aejR9VIUYfsyYupIGKAXSP6wvlgjzW-=s120-c-k-c0x00ffffff-no-rj"
+    />
+  </div>
+  <div class="leading-none">
+    <div class="text-base text-[#1B2124] font-bold leading-none">Anirban Bhowmik</div>
+    <div class="flex items-center space-x-2 mt-0.5">
+      <div class="text-[#5A4BDA] text-xs font-semibold">Class 12, Science</div>
+      <div class="w-[2px] h-4 bg-[#5A4BDA]"></div> <!-- bold vertical line -->
+      <div class="text-[#5A4BDA] text-xs font-semibold">CBSE</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- View Card ----- -->
+                    </div>
+                    <div class="testimonial-card">
+                        <img alt="comma" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" class="mb-2.5 sm:mb-3.5 h-8 w-10 bg-center bg-no-repeat bg-contain " style="color:transparent" src="https://www.pw.live/_next/static/media/comma.fcbeaa74.webp">
+                        <p>"The teachers are incredibly supportive and knowledgeable.  I always felt encouraged to ask questions."</p>
+ <!-- View Card of Anirban  -->
+         <div class="flex gap-3 items-center mt-4">
+  <div class="border-2 p-1 border-[#D9DCE1] rounded-full">
+    <img
+      alt="icon"
+      loading="lazy"
+      width="0"
+      height="0"
+      decoding="async"
+      data-nimg="1"
+      class="h-9 w-9 bg-center rounded-full overflow-hidden bg-no-repeat bg-contain"
+      style="color:transparent"
+      src="https://yt3.googleusercontent.com/mCubsJd_UfMMlYJny2eYVj0vXdj56IDR8PFE6uhf1aejR9VIUYfsyYupIGKAXSP6wvlgjzW-=s120-c-k-c0x00ffffff-no-rj"
+    />
+  </div>
+  <div class="leading-none">
+    <div class="text-base text-[#1B2124] font-bold leading-none">Anirban Bhowmik</div>
+    <div class="flex items-center space-x-2 mt-0.5">
+      <div class="text-[#5A4BDA] text-xs font-semibold">Class 12, Science</div>
+      <div class="w-[2px] h-4 bg-[#5A4BDA]"></div> <!-- bold vertical line -->
+      <div class="text-[#5A4BDA] text-xs font-semibold">CBSE</div>
+    </div>
+  </div>
+</div>
+
+ <!-- Fraction Text  -->
+        </section>
+
+        <section id="video" class="bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center">Welcome to Fraction Coaching Center</h2>
+                <div class="video-container" id="video-container">
+                  <!-- Video Embed code Here -->
+    <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+ #Copy Paste youtube Embed code
+  <iframe 
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/E-jiFATwOg8?si=qlUL51pVwq8ZviPn"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>   
+
+<section class="mt-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-center text-2xl font-semibold">Empowering Students, Achieving Success</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      <div class="md:col-span-2 text-center">
+        <p class="text-lg text-gray-700">
+          See how Fraction Coaching Center helps students like you excel academically and reach their full potential.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+         
+  </div>
+</section>
+</section>
+
+      <section id="contact" class="bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-center">Contact Us</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+
+      <!-- Contact Form Card -->
+      <div class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
+        <h3 class="text-lg font-semibold mb-4">Get in Touch</h3>
+        <form id="contact-form" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium">Name</label>
+            <input type="text" id="name" placeholder="Your Name" required class="w-full border border-gray-300 rounded px-3 py-2" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" placeholder="Your Email" required class="w-full border border-gray-300 rounded px-3 py-2" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium">Message</label>
+            <textarea id="message" placeholder="Your Message" required class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-full">Subscribe ♛ </button>
+        </form>
+        <div id="form-message" class="mt-4 text-yellow-400 text-center font-semibold hidden"></div>
+      </div>
+
+      <!-- Contact Info Card -->
+     <div class="contact-info text-sm text-black">
+  <h3 class="text-lg font-semibold leading-tight m-0 mb-[2px]">Our Location</h3>
+<div class="bg-white p-4 rounded-lg shadow-md">
+  <!-- Info Lines Wrapper -->
+  <div class="flex flex-col space-y-[2px] text-sm text-black">
+
+    <!-- Address -->
+   <div class="flex items-start gap-1">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mt-[1px] shrink-0 text-blue-500">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M19.5 10.5c0 7.906-7.994 15-7.994 15s-7.994-7.094-7.994-15a7.5 7.5 0 1115 0z" />
+  </svg>
+  <a href="https://maps.app.goo.gl/NgLXs5PfCb5UWEwp6?g_st=aw" target="_blank" rel="noopener noreferrer"
+     class="m-0 p-0 leading-tight text-[22px] hover:underline">
+    Near Bulbul Sangeet, Opposite Side of Hero Service Centre, Aryya Colony, Belonia, South Tripura- 799155
+  </a>
+</div>
+
+    <!-- Phone -->
+    <div class="flex items-start gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mt-[1px] shrink-0 text-blue-500">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M2.25 6.75c0 8.284 6.716 15 15 15a.75.75 0 00.75-.75v-2.25a.75.75 0 00-.634-.74 12.003 12.003 0 01-9.376-9.376.75.75 0 00-.74-.634H3a.75.75 0 00-.75.75v2.25z" />
+      </svg>
+      <p class="m-0 p-0 leading-tight text-[23px]">+91 82579 12071, +91 70855 04387</p>
+    </div>
+    <!-- Email -->
+<div class="flex items-start gap-1">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mt-[1px] shrink-0 text-blue-500">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M21.75 6.75v10.5a.75.75 0 01-.75.75h-18a.75.75 0 01-.75-.75V6.75M3.75 6.75l8.25 6 8.25-6" />
+  </svg>
+  <a href="mailto:fractionclasses45@gmail.com" class="m-0 p-0 leading-tight text-[19px] currentColor no-underline">
+      fractionclasses45@gmail.com
+  </a>
+</div>
+
+
+  </div>
+</div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto px-4 text-center">
+        <p>© 2024-2025 Fraction Coaching Center. All rights reserved.</p>
+        <p>Architected & Designed by : © Ⓟ 2025 AB Design and Edits Pvt. Ltd. </p>
+        <div class="social-icons flex justify-center mt-4">
+            
+            
+            <footer class="bg-black text-white py-8">
+  <div class="container mx-auto text-center">
+    <!-- Let's Get Social Title -->
+    <h3 class="text-xl font-semibold mb-4">Let’s Get Social</h3>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center space-x-6">
+      
+      
+     <!-- Facebook Icon (White Outline) -->
+<a href="https://www.facebook.com/profile.php?id=61573376257630" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Facebook" 
+   class="social-icon w-8 h-8 inline-block hover:scale-110 transition-transform">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       viewBox="0 0 24 24" 
+       fill="none" 
+       stroke="white" 
+       stroke-width="1.8" 
+       class="w-full h-full">
+    <path d="M22 12c0-5.5228-4.4772-10-10-10S2 6.4772 2 12c0 4.9912 3.6578 9.1288 8.438 9.8789V15.468h-2.54V12h2.54V9.7978c0-2.5068 1.4929-3.89 3.777-3.89 1.0942 0 2.238.195 2.238.195v2.46h-1.26c-1.2425 0-1.63.7715-1.63 1.562V12h2.773l-.443 3.468h-2.33v6.411C18.3422 21.1288 22 16.9912 22 12z"/>
+  </svg>
+</a>
+
+<!-- Instagram Icon (White Outline) -->
+<a href="https://www.instagram.com/fraction_classes/?__pwa=1#" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Instagram" 
+   class="social-icon w-8 h-8 inline-block hover:scale-110 transition-transform">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       viewBox="0 0 24 24" 
+       fill="none" 
+       stroke="white" 
+       stroke-width="1.5" 
+       class="w-full h-full">
+    <rect width="18" height="18" x="3" y="3" rx="4" stroke="white"/>
+    <circle cx="12" cy="12" r="3.5" stroke="white"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+  </svg>
+</a>
+
+    </div>
+  </div>
+</footer>
+
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuContent = document.getElementById('mobile-menu-content');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const videoContainer = document.getElementById('video-container');
+        const videoPlaceholder = document.getElementById('video-placeholder');
+        const videoIframe = document.getElementById('video-iframe');
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuContent.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuContent.classList.contains('hidden') && !mobileMenuContent.contains(event.target) && event.target !== mobileMenuButton) {
+                mobileMenuContent.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+
+        videoPlaceholder.addEventListener('click', () => {
+            videoPlaceholder.classList.add('hidden');
+            videoIframe.classList.remove('hidden');
+            videoIframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+        });
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || message === '') {
+                formMessage.textContent = 'Please fill in all fields.';
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.classList.remove('hidden');
+                return;
+            }
+
+            formMessage.textContent = 'Sending your message...';
+            formMessage.classList.remove('hidden');
+
+            setTimeout(() => {
+                formMessage.textContent = 'Message sent successfully!';
+                formMessage.classList.remove('hidden');
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+                setTimeout(()=> {
+                    formMessage.classList.add('hidden');
+                }, 3000)
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
