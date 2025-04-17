@@ -1,0 +1,183 @@
+/* Glassmorphism Effect */
+.glassmorphism {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.glassmorphism:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #222 0%, #000 100%);
+    background-size: cover;
+    color: white;
+    padding: 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #5e6edb, #633e91);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-outline {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-glass {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.header-nav-link:hover {
+    color: #ffdb58;
+    transform: scale(1.08);
+}
+
+.mobile-menu {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-link {
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(8px);
+    color: #ffdb58;
+}
+
+#home {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 12rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+#home h1 {
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease, pulse 2s infinite alternate;
+}
+
+#home p {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeInUp 1s ease, slightScale 2s infinite alternate;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.06); }
+}
+
+@keyframes slightScale {
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
+}
+
+/* More styles are included in the full file. Would you like a full CSS file export of all extracted styles from this HTML? I can generate and send it to you. */
