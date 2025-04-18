@@ -1,8 +1,4 @@
-# fractionclasses
-Absolutely! Here's a **longer, more elaborate, and beautifully structured** version for your `README.md` that presents **Fraction Coaching Centre** with pride and passion:
-
 ---
-
 # 🌟 Welcome to **Fraction Coaching Centre**
 
 > *"Empowering Young Minds, Enabling Brighter Futures."*
