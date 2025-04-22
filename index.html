@@ -660,14 +660,39 @@
                  class="h-23 w-23 rounded-full" />
         </a>
 
+<nav class="header-nav hidden md:flex space-x-6 p-6">
+  <a href="#home" class="header-nav-link">Home</a>
+  <a href="#courses" class="header-nav-link">Courses</a>
+  <a href="#testimonials" class="header-nav-link">Testimonials</a>
+  <a href="#gallery" class="header-nav-link">Gallery</a>
+  <a href="#video" class="header-nav-link">Video</a>
+  <a href="#contact" class="header-nav-link">Contact</a>
+</nav>
 
-            <nav class="header-nav hidden md:flex space-x-6">
-                <a href="#home" class="header-nav-link">Home</a>
-                <a href="#courses" class="header-nav-link">Courses</a>
-                <a href="#testimonials" class="header-nav-link">Testimonials</a>
-                <a href="#gallery" class="header-nav-link">Gallery</a>
-                <a href="#video" class="header-nav-link">Video</a>
-                <a href="#contact" class="header-nav-link">Contact</a>
+<style>
+  .header-nav-link {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+  }
+
+  .header-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .header-nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
                 <!-- Enroll Now Button -->
 <!-- Enroll Now Button -->
 <a href="#" class="btn-outline" id="enroll-btn" onclick="showForm(event)">Enroll Now</a>
